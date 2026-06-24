@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.page {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fdf5f5, #e8e2f5, #e4f1ff);
+  color: #111827;
+  position: relative;
+}
+
+/* Snow */
+.snow-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: #ffffff;
+  user-select: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(40px);
+  }
+  100% {
+    transform: translateY(110vh) translateX(80px);
+    opacity: 0;
+  }
+}
+
+/* Layout */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 700px;
+}
+
+.logo {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 80px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+.accent {
+  color: #7c3aed;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2.8rem;
+    letter-spacing: 6px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}

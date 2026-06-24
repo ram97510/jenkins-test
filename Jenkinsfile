@@ -17,22 +17,22 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t react-demo .'
+                sh 'docker build -t react-demo .'
             }
         }
 
         stage('Remove Existing Container') {
             steps {
-                bat '''
-                docker stop react-demo-container || exit 0
-                docker rm react-demo-container || exit 0
+                sh '''
+                docker stop react-demo-container || true
+                docker rm react-demo-container || true
                 '''
             }
         }
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 3000:80 --name react-demo-container react-demo'
+                sh 'docker run -d -p 3000:80 --name react-demo-container react-demo'
             }
         }
     }
